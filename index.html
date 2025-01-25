@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#102C57"> 
+    <meta name="msapplication-navbutton-color" content="#102C57"> 
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <title>Undangan Pernikahan</title>
+  <link rel="stylesheet" href="styles.css">  
+  <script src="script.js" defer></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cookie&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">  
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <!-- Bagian kiri yang tetap -->
+    <div class="left-section">
+      <div class="photo-overlay">
+        <h1 class="couple-name-1"></h1>
+      </div>
+    </div>
+
+    <button id="music-toggle" 
+    class="music-button" aria-label="Tombol kontrol musik">🎵</button>
+    <button id="open-wedding-gift"
+    class="wedding-gift-button">
+    <i class="fa-solid fa-money-bill-wave fa-xl"></i></button>
+    <nav class="toggle-menu">
+      <ul>
+        <li>
+          <a href="#couple" onclick="toggleHoverText(this)">
+            <i class="fa fa-kiss-wink-heart"></i>
+          </a>
+          <span class="hover-text"><i class="fa fa-kiss-wink-heart"></i>Couple</span>
+        </li>
+        <li>
+          <a href="#date" onclick="toggleHoverText(this)">
+            <i class="fa fa-calendar"></i>
+          </a>
+          <span class="hover-text"><i class="fa fa-calendar"></i> Date</span>
+        </li>
+        <li>
+          <a href="#detail-acara" onclick="toggleHoverText(this)">
+            <i class="fa fa-info-circle"></i>
+          </a>
+          <span class="hover-text"><i class="fa fa-info-circle"></i> Event</span>
+        </li>
+        <li>
+          <a href="#maps" onclick="toggleHoverText(this)">
+            <i class="fa fa-map-marker-alt"></i>
+          </a>
+          <span class="hover-text">
+            <i class="fa fa-map-marker-alt"></i> Location</span>
+        </li>
+        <li>
+          <a href="#wishes" onclick="toggleHoverText(this)">
+            <i class="fa fa-comment-dots"></i>
+          </a>
+          <span class="hover-text"><i class="fa fa-comment-dots"></i> Wishes</span>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Bagian kanan yang bisa digulir -->
+    <div class="scrollable-section">
+      <div class="right-section">
+        <h2>The Wedding Of</h2>
+        <h1 class="couple-name">Krish & Anaya</h1>
+        <p>Wednesday, 5th February 2025</p>
+        <div class="scroll-down">
+          <div class="mouse-icon">
+            <div class="scroll-wheel"></div>
+          </div>
+          <p>scroll down</p> 
+        </div>
+      </div>
+      <div class="left-section-mobile">
+      <div class="photo-overlay">
+      <h1 class="couple-name-1">Krish & Anaya</h1>
+      </div>
+      </div>
+      <div class="quote-section">
+        <h2>"True love stories never have endings."</h2>
+        <p>- Richard Bach</p>
+      </div>
+      <div class="couple" id="couple">
+        <h3>The Wedding Of</h3>
+        <div class="person">
+          <img src="Pria.png" alt="Pria" class="Photo" loading="lazy" decoding="async">
+          <h4>Krish</h4>
+          <p>Putra</p>
+          <p>Bapak Smith & Ibu Belinda</p>
+      </div>
+      <h6>&</h6>
+      <div class="person">
+          <img src="Wanita.png" alt="Wanita" class="Photo" loading="lazy" decoding="async">
+          <h4>Anaya</h4>
+          <p>Putri</p>
+          <p>Bapak George & Ibu Lucy</p>
+      </div>
+      </div>
+      <div class="date" id="date">
+        <h5>Save The Date</h5>
+        <div id="countdown-timer" role="timer">
+          <div class="days">
+            <span id="days">00</span>
+            <p>Days</p>
+          </div>
+          <div class="time-details">
+            <div>
+              <span id="hours">00</span>
+              <p>Hours</p>
+            </div>
+            <div>
+              <span id="minutes">00</span>
+              <p>Minutes</p>
+            </div>
+            <div>
+              <span id="seconds">00</span>
+              <p>Seconds</p>
+            </div>
+          </div>
+        </div>                      
+        <p>Wednesday,5th February 2025</p>
+        <div class="button-container">
+        <button id="set-reminder" 
+        class="reminder-button" aria-label="Set pengingat untuk acara">
+        <i class="fas fa-calendar-plus"></i> Set Reminder </button>
+        <button id="turn-on-notification" 
+        class="notification-button" aria-label="Aktifkan notifikasi">
+        <i class="fas fa-bell"></i> Turn on notification </button>
+        <button id="open-rsvp-btn">
+        <i class="fa-duotone fa-solid fa-book"></i> Reservasi (RSVP) </button>
+        </div>
+          <div id="rsvp-modal" class="hidden"> 
+            <div id="rsvp-form">
+              <h3>Konfirmasi kehadiran anda
+                <button class="close-btn" onclick="closeRSVPForm()"> - </button>
+              </h3>
+              <img src="RSVP.png" alt="RSVP" class="Photo" loading="lazy" decoding="async" style="width: 100%; height: 90%;" />
+              <input type="text" id="nama" placeholder="Nama" />
+              <input type="text" id="whatsapp" placeholder="Nomor WhatsApp" />
+              <textarea id="alamat" placeholder="Alamat Anda"></textarea>
+              <p>Respon Anda:</p>
+              <label><input type="radio" name="response" value="yes" /> Ya, Saya akan datang</label>
+              <label><input type="radio" name="response" value="no" /> Maaf, Saya tidak bisa</label>
+              <button type="button" id="sendToWhatsApp">
+                <i class="fab fa-whatsapp"></i> Kirim
+            </button>
+            </div>
+          </div>  
+        </div>
+        <div class="content" aria-labelledby="event-details-heading" id="detail-acara">
+          <img src="Ring.gif" alt="ring" class="Photo-ring" loading="lazy" decoding="async">
+          <h3>Akad</h3>
+          <div class="event-details">
+          <div class="event">
+          <div>
+          <i class="fa fa-calendar"></i>
+          <p>Minggu, 28 Oktober 2025</p>
+          </div>
+          <div>
+          <i class="fa fa-clock"></i>
+          <p>10:00 WIB - Selesai</p>
+          </div>
+          <div>
+          <i class="fa fa-location"></i>
+          <p>Dusun Pulokerto RT 04 RW 05, Desa Sumbergede,</p>
+          <p>Kecamatan Cangkring, Kabupaten Kediri</p>
+          </div>
+          </div>
+          <h3>Resepsi</h3>
+          <div class="event">
+          <div>
+          <i class="fa fa-calendar"></i>
+          <p>Minggu, 28 Oktober 2025</p>
+          </div>
+          <div>
+          <i class="fa fa-clock"></i>
+          <p>10:00 WIB - Selesai</p>
+          </div>
+          <div>
+          <i class="fa fa-location"></i>
+          <p>Dusun Pulokerto RT 04 RW 05, Desa Sumbergede,</p>
+          <p>Kecamatan Cangkring, Kabupaten Kediri</p>
+          </div>
+          </div>
+          </div>
+          <button id="lihat-lokasi">
+            <i class="fas fa-map-marker-alt"></i> Lihat Lokasi</button>
+        </div>
+        <div class="maps" id="maps">
+          <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d317713.05221384534!2d112.02024957704078!3d-7.798256595883951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7853d48cbe605d%3A0xe82558715e16675b!2sKediri%2C%20Jawa%20Timur!5e0!3m2!1sid!2sid!4v1675523014601!5m2!1sid!2sid" 
+          width="100%" 
+          height="500" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy"
+          aria-label="Peta lokasi acara">
+          </iframe>
+          <button  id="lihat-lokasi">
+            <i class="fa fa-map-marker-alt"></i> Lihat Lokasi</button>
+        </div>
+        <div class="wedding-gift" aria-labelledby="gift-heading" id="wedding-gift">
+          <button class="close-btn-gift" onclick="closeGiftForm()"> x </button>
+          <h3 id="gift-heading">Wedding Gift
+          </h3>
+          <p>
+              Kehadiran Anda merupakan hadiah terindah bagi kami. Namun, jika Anda ingin memberikan tanda kasih, 
+              Anda dapat memberikan kado secara cashless melalui:
+          </p>
+          <div class="gift-details">
+              <img src="https://www.freelogovectors.net/wp-content/uploads/2023/02/bri-logo-freelogovectors.net_.png" 
+              alt="Logo Bank BRI" class="bank-logo">
+              <p><strong>1234-5678-9012-3456</strong></p>
+              <p>A.n. Rijal</p>
+          </div>
+          <div class="digital-wallet">
+              <p>Atau melalui dompet digital:</p>
+          </div>
+        </div> 
+        <div class="wishes" id="wishes">
+          <h4>Wishes</h4>
+          <input type="text" id="name" placeholder="Nama Anda" />
+          <textarea id="address" placeholder="Alamat Anda"></textarea>
+          <textarea id="wish" placeholder="Your Wish"></textarea>
+          <button id="send">Send</button>         
+        <div id="wishes-output" style="margin-top: 20px;">
+        </div>
+        </div>
+    <div class="closing">        
+      <p>
+      Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila 
+      Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu kepada kami.
+      </p>
+      <p>Wassalamualaikum Warahmatullahi Wabarakatuh.</p>
+    </div>
+    </div>
+    <audio id="background-music" loop>
+        <source src="music-file.mp3" type="audio/mpeg">
+    </audio> 
+</body>
+</html>

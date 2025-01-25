@@ -1,0 +1,973 @@
+body, html {
+margin: 0;
+padding: 0;
+height: 100%;
+overflow: hidden; 
+scroll-behavior: smooth;
+}
+
+.scroll-down {
+font-size: 2.5rem;
+margin-bottom: 20px;
+margin-top: 50px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.mouse-icon {
+width: 30px;
+height: 50px;
+border: 2px solid white;
+border-radius: 50px;
+position: relative;
+}
+
+.scroll-wheel {
+width: 6px;
+height: 10px;
+background: white;
+border-radius: 10px;
+position: absolute;
+top: 10px;
+left: 50%;
+transform: translateX(-40%);
+animation: scrollWheel 1.5s infinite;
+}
+
+@keyframes scrollWheel {
+0% {
+opacity: 1;
+transform: translate(-50%, 1px);
+}
+50% {
+opacity: 1;
+transform: translate(-50%, 8px);
+}
+100% {
+opacity: 0;
+transform: translate(-50%, 20px);
+}
+}
+.container {
+display: flex;
+height: 100%;
+}
+
+.left-section {
+width: 62%; 
+background: url('prewedd-foto.jpg') no-repeat center center/cover;
+position: fixed; 
+height: 100%;
+top: 0;
+left: 0;
+}
+.couple-name-1 {
+font-family: 'Cookie', Static;
+color: #FFEC9E;
+font-size: 4rem;
+margin-left: 4rem;
+margin-bottom: 4rem;
+}
+.photo-overlay {
+position: absolute;
+bottom: 20px;
+left: 20px;
+padding: 10px 20px;
+}
+
+.couple-name {
+font-family: 'Cookie', cursive;
+color: #FFEC9E;
+font-size: 2.5rem;
+margin-left: 3rem;
+margin-right: 3rem;
+margin-bottom: 4rem;
+overflow: hidden;
+width: fit-content;
+padding: 0 10px; 
+}
+
+.music-button {
+display: flex;
+justify-content: center; 
+align-items: center; 
+position: absolute;
+top: 10px; 
+right: 38%; 
+color: #102C57;
+background-color: #fff; 
+width: 40px; 
+height: 40px; 
+border-radius: 50%;
+border: none;
+padding: 0; 
+cursor: pointer;
+font-size: 1rem; 
+box-shadow: 0 4px 8px rgba(223, 219, 219, 0.3);
+transition: all 0.3s ease;
+}
+
+.music-button:hover {
+background: #FFEC9E;
+color: #1d3557;
+}
+
+.wedding-gift-button {
+display: flex; 
+justify-content: center; 
+align-items: center; 
+background-color: #73e38a;
+position: absolute;
+top: 60px; 
+right: 38%;  
+width: 50px; 
+height: 50px; 
+border-radius: 50%;
+border: none;
+padding: 0; 
+cursor: pointer;
+font-size: 1.2rem; 
+box-shadow: 0 4px 8px rgba(223, 219, 219, 0.3);
+transition: all 0.3s ease;
+}
+
+.wedding-gift-button:hover {
+background: #57c97b;
+color: #ffffff;
+}
+
+
+.toggle-menu {
+width: 50px;
+background-color: #102C57;
+position: absolute;
+top: 50%; 
+right: 38.5%;
+transform: translateY(-50%);
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+padding: 15px 0;
+box-shadow: 0 6px 10px rgba(223, 219, 219, 0.3);
+outline: 1px solid #FFEC9E;
+}
+
+.toggle-menu ul {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.toggle-menu li {
+margin: 7px 0;
+position: relative;
+}
+
+.toggle-menu li i {
+color: #FFEC9E;
+font-size: 15px; 
+}
+.toggle-menu li.active i {
+color: #102C57;
+font-size: 15px;
+}
+
+.hover-text {
+left: -10px;
+width: 65px;
+display: hidden;
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: #FFEC9E;
+color: #102C57;
+padding: 5px 10px;
+border-radius: 15px;
+font-size: 15px;
+white-space: nowrap;
+box-shadow: 0 4px 6px rgba(223, 219, 219, 0.3);
+opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+
+.toggle-menu li.active .hover-text {
+  visibility: visible;
+  display: block;
+  opacity: 1;
+  transition: opacity 0.3s ease-in-out;
+}
+ 
+.hover-text i{
+color: #102C57;
+}
+
+.scrollable-section {
+width: 40%; 
+margin-left: 62%; 
+height: 100%;
+overflow-y: scroll;
+}
+
+.right-section, .quote-section {
+height: 100vh;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+text-align: center;
+padding: 20px;
+}
+.left-section-mobile {
+display: none;
+}
+
+.right-section {
+position: sticky;
+background-color: #102C57;
+color: #FFEC9E;
+z-index: 10%;
+}
+.right-section h1 {
+font-family: 'Cookie', Static;
+font-size: 4rem;
+margin: 5px;
+}
+.right-section h2 {
+font-size: 1.5rem;
+margin-bottom: 10px;
+animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+from { transform: translateX(-50%); }
+to { transform: translateY(0); }
+}
+
+.right-section p {
+margin-top: 20px;
+font-size: 1rem;
+}
+
+
+.quote-section {
+background-color: #102C57;
+text-align: center;
+padding: 20px;
+margin: 0;
+}
+
+.quote-section h2 {
+font-family: 'Italianno', sans-serif;
+font-size: 2rem;
+color: #FFEC9E;
+}
+
+.quote-section p {
+font-family: 'MuseoModerno', sans-serif;
+font-size: 1.2rem;
+color: #FFEC9E;
+}
+
+.couple {
+background-color: #102C57; 
+text-align: center;
+padding: 20px 10px; 
+margin: 0;
+padding: 10px 5px; 
+}
+
+.couple h3 {
+font-family: 'Cookie', Static;
+font-size: 3rem;
+color: #FFEC9E;
+margin-bottom: 15px;
+}
+
+.couple h6 {
+margin: 0;
+font-family: 'Cookie', Static;
+font-size: 3rem;
+color: #FFEC9E;
+}
+.person {
+display: contents;
+margin: 0 20px; 
+text-align: center;
+}
+
+.person img.Photo {
+width: 40%;
+height: 40%;
+border-radius: 50%; 
+object-fit: cover;
+margin-bottom: 20px;
+}
+
+.person h4 {
+font-size: 1.2rem;
+color: #FFEC9E;
+margin: 5px 0;
+}
+
+.person p {
+font-family: 'MuseoModerno', sans-serif;
+font-size: 0.9rem;
+color: #FFEC9E;
+margin: 2px 0;
+}
+
+.date {
+background: #102C57;
+font-size: 1.5rem;
+margin: 0;
+text-align: center;
+color: #FFEC9E;
+padding: 10px 0; 
+}
+
+.date h5 {
+font-family: 'Cookie', Static;
+font-size: 3rem;
+color: #FFEC9E;
+}
+
+.date p {
+font-size: 1rem;
+margin: 1rem;
+}
+
+#countdown-timer {
+display: flex;
+flex-direction: column; 
+align-items: center; 
+gap: 20px; 
+}
+
+#countdown-timer .days {
+font-size: 3rem; 
+font-weight: bold;
+text-align: center;
+}
+
+#countdown-timer .days p {
+font-size: 1rem; 
+text-transform: uppercase; 
+}
+
+#countdown-timer .time-details {
+display: flex;
+gap: 30px; 
+}
+
+#countdown-timer .time-details div {
+text-align: center;
+}
+
+#countdown-timer .time-details span {
+display: block; 
+font-size: 1.5rem; 
+font-weight: bold;
+}
+
+#countdown-timer .time-details p {
+font-size: 0.8rem; 
+margin: 0;
+text-transform: uppercase; 
+}
+
+.ongoing-event {
+font-size: 1.5rem; 
+font-weight: bold; 
+color: #ff5722; 
+text-align: center; 
+margin-top: 20px;  
+}
+
+.button-container {
+display: flex;
+flex-direction: column; 
+align-items: center; 
+gap: 10px;
+margin-top: 20px; 
+} 
+button {
+flex-direction: column;
+margin: 5px;
+padding: 10px 20px;
+font-size: 1rem; 
+font-weight: bold; 
+border: none; 
+border-radius: 25px;
+cursor: pointer; 
+transition: all 0.3s ease; 
+}
+
+button#set-reminder {
+background-color: #1e5c9e; 
+color: #ffffff;
+flex-direction: column;
+}
+
+button#turn-on-notification {
+background-color: #2085c9;
+color: #ffffff;
+flex-direction: column;
+}
+
+button#open-rsvp-btn {
+height: 60px;
+background-color: #2a853c;
+color: #ffffff;
+border-radius: 10px;
+flex-direction: column;
+}
+
+button:hover {
+transform: scale(1.05); 
+opacity: 0.9; 
+}
+
+button:active {
+transform: scale(0.95); 
+opacity: 1; 
+}
+
+
+#rsvp-modal {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0, 0, 0, 0.5);
+display: flex; 
+justify-content: center;
+align-items: center;
+z-index: 1000; 
+}
+
+#rsvp-form {
+display: flex;
+flex-direction: column;
+gap: 10px;
+background: white; 
+padding: 15px; 
+border-radius: 20px;
+max-width: 300px; 
+width: 100%;
+height: auto;
+position: relative;
+}
+#rsvp-form h3 {
+display: flex;
+align-items: center; 
+justify-content: space-between;
+text-align: left;
+color: #102C57;
+font-size: 18px; 
+margin: 0;
+}
+
+#rsvp-form h3 {
+font-size: 20px; 
+font-weight: bold;
+background: none;
+border: none;
+cursor: pointer;
+color: #102C57;
+}
+
+#rsvp-form .close-btn {
+margin: 2px;
+width: 40px;
+height: 40px;
+border-radius: 50%;
+font-size: 20px; 
+font-weight: bold;
+cursor: pointer;
+color: #102C57;
+background-color: #f1faee;
+border: 2px solid#102C57;
+}  
+
+#rsvp-form p{
+color: #102C57;
+margin: auto;
+}
+#rsvp-form button {
+margin: 0 auto;
+width: 30%;
+padding: 10px;
+background-color: #25d366;
+border: none;
+border-radius: 10px;
+font-size: 16px;
+cursor: pointer;
+font-size: 1rem;
+color: #102C57;
+flex-direction: column;
+
+}
+#rsvp-form input, 
+#rsvp-form textarea {
+margin-bottom: 1px; 
+padding: 5px;
+border-radius: 10px;
+border: 1px solid #102C57; 
+transition: border-color 0.3s ease; 
+}
+
+#rsvp-form input:focus, 
+#rsvp-form textarea:focus {
+border-color: #25d366; 
+outline: none; 
+}
+
+#rsvp-form label {
+font-size: 1rem;
+color: #102C57; 
+}
+.hidden {
+display: none !important; 
+}
+
+.content {
+text-align: center;
+background-color: #102C57;
+padding: 10px 0; 
+}
+
+.event {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.content h3 {
+font-family: 'Cookie', Static;
+font-size: 3rem;
+color: #FFEC9E;
+margin: 2rem;
+}
+
+.event p {
+font-family: 'MuseoModerno', sans-serif;
+font-size: 0.9rem;
+color: #FFEC9E;
+display: inline-block;
+}
+
+.event i {
+ margin-right: 5px;
+font-size: 0.9rem;
+color: #FFEC9E;
+display: inline-block;
+}
+
+.Photo-ring {
+width: 50%;
+height: 50%;
+}
+
+button#lihat-lokasi{
+margin: 20px;
+color: #FFEC9E;
+background-color: #102C57;
+border: 1.5px solid #FFEC9E;
+}
+
+button#lihat-lokasi i {
+margin-right: 5px;
+font-size: 13px;
+}
+.maps{
+display: flex;
+flex-direction: column; 
+align-items: center; 
+width: 100%;
+background-color: #102C57;
+}
+button.maps-btn {
+flex-direction: column; 
+align-items: center; 
+margin: 10px;
+color: #FFEC9E;
+background-color: #102C57;
+border: 1.5px solid #FFEC9E;
+}
+
+.close-btn-gift { 
+position: absolute; 
+top: 3px; 
+right: 3px; 
+background-color: #ccc; 
+color: #102C57; 
+border: none; 
+border-radius: 30%; 
+width: 30px; 
+height: 30px; 
+cursor: pointer; 
+font-size: 1rem; 
+display: flex; 
+justify-content: center; 
+align-items: center; }
+
+.wedding-gift {
+font-family: 'MuseoModerno', sans-serif;
+margin: 0;
+padding: 1.5rem;
+background: #ffffff;
+color: #102C57;
+text-align: center;
+display: none;
+position: absolute; 
+top: 50%; 
+left: 50%; 
+transform: translate(-50%, -50%);
+width: 300px; 
+height: auto;  
+border-radius: 10px; 
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+.wedding-gift h3{
+font-family: 'Cookie', Static;
+font-size: 3rem;
+margin: 8px;
+}
+.wedding-gift p{
+font-family: 'MuseoModerno', sans-serif;
+font-size: 0.8rem;
+} 
+.bank-logo {
+max-width: 100px;
+height: auto;
+display: block;
+margin: 0.5rem auto;
+border-radius: 8px;
+}
+
+.gift-details,
+.digital-wallet {
+margin-bottom: 1rem;
+}
+
+.gift-details p,
+.digital-wallet p {
+font-size: 0.8rem;
+margin-bottom: 0.5rem;
+}
+
+.wishes-container {
+display: flex;
+justify-content: center; 
+align-items: center;    
+height: 100vh;          
+background-color: #102C57; 
+padding: 0 20px;       
+box-sizing: border-box;
+}
+.wishes {
+background-color: #102C57;
+padding: 20px 0; 
+text-align: center;      
+width: 100%;           
+text-align: center;
+box-sizing: border-box; 
+}
+
+.wishes input {
+background-color: #102c5744;
+width: 70%; 
+height: 30%;
+margin-bottom: 10px; 
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+max-height: 50%;
+}
+.wishes textarea {
+background-color: #102c5744;
+width: 70%; 
+margin-bottom: 10px; 
+padding: 20px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+}
+
+.wishes h4 {
+font-family: 'Cookie', Static;
+font-size: 3rem;
+color: #FFEC9E;
+text-align: center;
+}
+
+.wishes button {
+background-color: #FFEC9E;
+color: #102C57;
+padding: 10px 20px;
+border: none;
+border-radius: 8px;
+cursor: pointer;
+width: 50%;
+}
+
+.wishes button:hover {
+background-color: #FFEC9E;
+}
+
+#wishes-output {
+padding: 20px;
+max-width: 400px;
+margin: 20px auto;
+}
+#wishes-output p {
+color: #FFEC9E;
+margin: 5px 0;
+}
+
+#wishes-output hr {
+border-top: 1px solid #ccc;
+margin: 10px 0;
+}
+
+.wish-item {
+display: flex;
+align-items: flex-start;
+background-color: #183b5e; 
+border-radius: 15px;
+padding: 15px;
+margin-bottom: 15px;
+box-shadow: 0 8px 20px rgba(186, 188, 127, 0.2); 
+}
+
+.wish-avatar {
+display: flex;
+align-items: center;
+justify-content: center;
+background-color: #a7d4f7; 
+color: #183b5e; 
+font-weight: bold;
+font-size: 18px;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+margin-right: 10px;
+}
+
+.wish-content {
+color: #FFEC9E; 
+}
+
+.wish-content p {
+margin: 5px 0;
+}
+
+.wish-content p strong {
+
+font-size: 1.1rem;
+color: #FFEC9E; 
+}
+.closing {
+margin: 0;
+padding: 20px;
+text-align: center;
+background-color: #102C57;
+}
+
+.closing p {
+color: #FFEC9E;
+}
+
+
+@media (max-width: 768px) {
+
+.container {
+display: flex;
+flex-direction: column-reverse;
+}
+.container h1{
+display: contents;
+text-align: center;
+}
+.person {
+display: block;
+margin: 20px auto; 
+}
+
+.person img.Photo {
+width: 80px;
+height: 80px;
+}
+.left-section {
+display: none; 
+}
+
+.couple-name-1 {
+display: none;
+}
+.photo-overlay {
+display: none;
+}
+
+.left-section-mobile {
+display: block;
+width: auto;
+background: url('prewedd-foto.gif') no-repeat center center/cover;
+background-size: cover;
+height: 40%;
+padding: 20px 0;
+text-align: center;
+}
+
+.scrollable-section {
+width: 100%;
+margin-left: 0;
+overflow-y: auto;
+}
+
+.right-section, .quote-section, .wishes-container {
+padding: 10px;
+}
+
+.wishes input, .wishes textarea {
+width: 70%;
+}
+
+button {
+width: 60%;
+margin: 5px auto;
+}
+button#set-reminder {
+width: 40%;
+}
+
+button#turn-on-notification {
+  width: 50%;
+}
+#rsvp-form {
+width: 90%;
+}
+.couple-name-1 {
+display: hidden;
+}
+
+.wedding-gift{
+height: auto;
+
+}
+
+.wedding-gift-button {
+background-color: #73e38a;
+position: absolute;
+top: 60px; 
+right: 9px; 
+width: 50px; 
+height:50px; 
+border-radius: 50%;
+border: none;
+padding: 1rem 1rem;
+cursor: pointer;
+font-size: 0.8rem;
+box-shadow: 0 4px 8px rgba(223, 219, 219, 0.3);
+transition: all 0.3s ease;
+}
+.music-button {
+display: flex;
+justify-content: center; 
+align-items: center; 
+position: absolute;
+top: 10px; 
+right: 9px; 
+color: #102C57;
+background-color: #fff; 
+width: 40px; 
+height: 40px; 
+border-radius: 50%;
+border: none;
+padding: 0;
+cursor: pointer;
+font-size: 1.2rem;
+box-shadow: 0 4px 8px rgba(223, 219, 219, 0.3);
+transition: all 0.3s ease;
+}
+
+.music-button:hover {
+background: #FFEC9E;
+color: #1d3557;
+}
+
+.toggle-menu {
+width: 50%;
+background-color: #102C57;
+position: absolute;
+bottom: 5%;
+left: 50%;
+top: auto;
+right: auto;
+transform: translateX(-50%);
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+border-radius: 30px;
+padding: 15px 15px;
+box-shadow: 0 6px 10px rgba(223, 219, 219, 0.3);
+outline: 1px solid #FFEC9E;
+transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.toggle-menu ul {
+width: auto; 
+height: auto; 
+list-style: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+}
+
+.toggle-menu ul li {
+margin: 0 5px;
+}
+
+.toggle-menu ul li a {
+display: flex;
+justify-content: center;
+align-items: center;
+width: 20px; 
+height: 20px; 
+text-decoration: none;
+color: inherit;
+}
+
+.toggle-menu ul li .hover-text {
+display: none;
+z-index: 1000;
+}
+.Photo-ring {
+width: 50%;
+height: 50%;
+margin-bottom: 5px;
+}
+
+.person img.Photo {
+width: 50%;
+height: 50%;
+border-radius: 50%; 
+object-fit: cover;
+margin-bottom: 10px;
+}
+
+}
